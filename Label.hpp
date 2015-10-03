@@ -9,6 +9,7 @@ class Label : public Widget {
         Label(const std::string& text, sf::Font& font, Widget* parent=nullptr);
         virtual ~Label();
 
+        void setSize(sf::Vector2f size);
         void setText(const std::string& text);
         void setCharacterSize(unsigned int size);
         unsigned int getCharacterSize()const;

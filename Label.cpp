@@ -26,6 +26,16 @@ void Label::setTextColor(const sf::Color &color){
     _text.setColor(color);
 }
 
+void Label::setSize(sf::Vector2f size){
+    if(size.x < _text.getGlobalBounds().width){
+        _text.setScale(size.x/_text.getLocalBounds().width, size.x/_text.getLocalBounds().width);
+    }
+    if (size.y < _text.getGlobalBounds().height){
+       _text.setScale(size.y/_text.getLocalBounds().height,size.y/_text.getLocalBounds().height);
+    }
+
+}
+
 sf::Vector2f Label::getSize() const {
     sf::FloatRect rect = _text.getGlobalBounds();
     return sf::Vector2f(rect.width,rect.height);
@@ -33,9 +43,6 @@ sf::Vector2f Label::getSize() const {
 
 void Label::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     states.transform.translate(_position);
-    std::cout << _position.x << " , " << _position.y << std::endl;
-    std::cout << _text.getPosition().x << " , " << _text.getPosition().y << std::endl;
-    std::cout << "--- " << _text.getFont()->getTexture(_text.getCharacterSize()).getSize().x << _text.getString().toAnsiString() << std::endl;
     target.draw(_text,states);
 
 }

@@ -1,7 +1,7 @@
 #include "ImgTextButton.hpp"
 
 ImgTextButton::ImgTextButton(const sf::Texture & pressedTexture, sf::Texture & releasedTexture,
-                             std::string& text, sf::Font font, Widget *parent)
+                             std::string& text, sf::Font& font, Widget *parent)
     :Button(parent), _label(text, font, nullptr){
     //setTextColor(sf::Color(255, 255, 255, 128));
 
@@ -53,10 +53,12 @@ void ImgTextButton::setTextColor(const sf::Color &color){
 
 void ImgTextButton::updateShape(){
    // sf::Vector2f label_size = _label.getSize();
-    unsigned int char_size = _label.getCharacterSize();
-   //_shape.setSize(sf::Vector2f(char_size*2+label_size.x, char_size*2+label_size.y));
-    _label.setPosition(char_size,char_size);
+    //unsigned int charSize = _label.getCharacterSize();
+   //_shape.setSize(sf::Vector2f(charSize*2+label_size.x, charSize*2+label_size.y));
     _sprite.setScale(_shape.getSize().x/_sprite.getLocalBounds().width, _shape.getSize().y/_sprite.getLocalBounds().height );
+    sf::Vector2f labelsize(_shape.getSize().x,_shape.getSize().y/3);
+    _label.setSize(labelsize);
+    _label.setPosition(_shape.getSize().x/2-_label.getSize().x/2,_shape.getSize().y/2-_label.getSize().y/2);
     Widget::updateShape();
 }
 
@@ -64,7 +66,7 @@ void ImgTextButton::updateShape(){
 void ImgTextButton::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     //std::cout << _position.x << ", " << _position.y << std::endl;
     states.transform.translate(_position);
-    target.draw(_shape, states);
+    //target.draw(_shape, states);
     target.draw(_sprite, states);
     target.draw(_label,states);
 }

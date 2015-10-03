@@ -8,7 +8,7 @@ class ImgTextButton : public Button {
 
 public:
     ImgTextButton(const sf::Texture& pressedTexture, sf::Texture& releasedTexture,
-                  std::string &text, sf::Font font, Widget* parent=nullptr);
+                  std::string& text, sf::Font& font, Widget* parent=nullptr);
     virtual ~ImgTextButton();
 
     void setSize(sf::Vector2f size);

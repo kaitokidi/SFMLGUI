@@ -39,8 +39,8 @@ void Game::Run(){
 
     ImgTextButton* imgTextButton;
     std::string buttonText;
-    buttonText = "22222";
-    imgTextButton = new ImgTextButton(t1,t2,buttonText,font);
+    buttonText = "  2222  ";
+    imgTextButton = new ImgTextButton(t1,t2,buttonText, font);
     imgTextButton->onClick = [this](const sf::Event&, Button&){
         std::cout << value << " wow so imgtext "<<std::endl;
     };
@@ -62,7 +62,7 @@ void Game::Run(){
 
             if (event.type == sf::Event::Closed) { window.close(); exit(0); }
         }
-
+        window.clear();
         window.draw(_mainMenu);
         window.display();
 
