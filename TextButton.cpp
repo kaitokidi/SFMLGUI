@@ -58,8 +58,7 @@ void TextButton::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     target.draw(_label,states);
 }
 
-void TextButton::onMouseEntered()
-{
+void TextButton::onMouseEntered() {
     const float light = 1.4f;
     _shape.setOutlineColor(sf::Color(_outlineColor.r*light,
     _outlineColor.g*light,
@@ -68,8 +67,7 @@ void TextButton::onMouseEntered()
     _fillColor.b*light,
     _fillColor.b*light));
 }
-void TextButton::onMouseLeft()
-{
+void TextButton::onMouseLeft() {
     _shape.setOutlineColor(_outlineColor);
     _shape.setFillColor(_fillColor);
 }

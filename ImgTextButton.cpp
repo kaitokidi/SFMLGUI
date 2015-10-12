@@ -3,7 +3,6 @@
 ImgTextButton::ImgTextButton(const sf::Texture & pressedTexture, sf::Texture & releasedTexture,
                              std::string& text, sf::Font& font, Widget *parent)
     :Button(parent), _label(text, font, nullptr){
-    //setTextColor(sf::Color(255, 255, 255, 128));
 
     _label = Label (text, font, this);
 

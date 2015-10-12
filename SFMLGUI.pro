@@ -18,7 +18,8 @@ SOURCES += main.cpp \
     VLayout.cpp \
     Game.cpp \
     ImgButton.cpp \
-    ImgTextButton.cpp
+    ImgTextButton.cpp \
+    HLayout.cpp
 
 HEADERS += \
     Widget.hpp \
@@ -31,5 +32,6 @@ HEADERS += \
     VLayout.hpp \
     Game.hpp \
     ImgButton.hpp \
-    ImgTextButton.hpp
+    ImgTextButton.hpp \
+    HLayout.hpp
 

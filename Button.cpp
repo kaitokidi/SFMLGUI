@@ -1,5 +1,6 @@
 #include "Button.hpp"
 #include <iostream>
+
 Button::FuncType Button::defaultFunc = [](const sf::Event&,Button&)->void{};
 
 Button::Button(Widget* parent) : Widget(parent),

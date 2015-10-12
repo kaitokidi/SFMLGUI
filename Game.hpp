@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Frame.hpp"
 #include "VLayout.hpp"
+#include "HLayout.hpp"
 #include "ImgButton.hpp"
 #include "TextButton.hpp"
 #include "ImgTextButton.hpp"

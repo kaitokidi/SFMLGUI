@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(): window(sf::VideoMode(500,500), "OP") {
+Game::Game(): window(sf::VideoMode(800,800), "OP") {
     value = 0;
 }
 
@@ -8,7 +8,8 @@ void Game::Run(){
 
     Frame _mainMenu(window);
 
-    VLayout* layout = new VLayout;
+    HLayout* layout = new HLayout;
+//        VLayout* layout = new VLayout;
     layout->setSpace(25);
 
     sf::Font font;
