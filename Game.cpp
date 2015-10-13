@@ -9,7 +9,7 @@ void Game::Run(){
     Frame _mainMenu(window);
 
     HLayout* layout = new HLayout;
-//        VLayout* layout = new VLayout;
+
     layout->setSpace(25);
 
     sf::Font font;

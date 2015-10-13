@@ -42,7 +42,6 @@ void ImgButton::updateShape(){
 
 void ImgButton::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     states.transform.translate(_position);
-    target.draw(_shape, states);
     target.draw(_sprite, states);
 }
 
